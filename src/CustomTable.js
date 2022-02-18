@@ -153,10 +153,11 @@ function CustomTable() {
   async function handle_delete(){
     if (index !== -1){
       try{
+        const filtered_data = data.filter( e => e.key === index )
         await customAxios.delete(customAxios.defaults.baseURL,
         {
           data: {
-            '_id' : data[index]._id
+            '_id' : filtered_data[0]._id
           }
         })
         notification.open({
@@ -190,7 +191,7 @@ function CustomTable() {
             '_id': row._id
           }
         })
-      if (res.status == 200){
+      if (res.status === 200){
         notification.open({
           message: 'Editado exitosamente',
           type: 'success'
