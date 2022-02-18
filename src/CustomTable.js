@@ -153,7 +153,7 @@ function CustomTable() {
   async function handle_delete(){
     if (index !== -1){
       try{
-        const answer = await customAxios.delete(customAxios.defaults.baseURL,
+        await customAxios.delete(customAxios.defaults.baseURL,
         {
           data: {
             '_id' : data[index]._id

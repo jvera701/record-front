@@ -35,9 +35,9 @@ function Create(){
         setHobbie(e.target.value)
     }
     
-    function submit(){
+    async function submit(){
         try{
-            customAxios.post(customAxios.defaults.baseURL,
+            await customAxios.post(customAxios.defaults.baseURL,
                 {
                   data: {
                     'tipo_doc' : tipoDoc,
